@@ -87,12 +87,12 @@ If you plan to solely use Prisma instead of the Supabase Data API (PostgREST), t
             </TabPanel>
             <TabPanel id="pnpm_initiate" label="pnpm">
               ```bash
-              pnpm init -y
+              pnpm init
               pnpm install prisma typescript ts-node @types/node --save-dev
 
-              pnpx tsc --init
+              pnpm exec tsc --init
 
-              pnpx prisma init
+              pnpm exec prisma init
               ```
             </TabPanel>
             <TabPanel id="yarn_initiate" label="yarn">
@@ -237,7 +237,7 @@ If you plan to solely use Prisma instead of the Supabase Data API (PostgREST), t
             </TabPanel>
             <TabPanel id="pnpm_migrate" label="pnpm">
             ```bash
-            pnpx prisma migrate dev --name first_prisma_migration
+            pnpm exec prisma migrate dev --name first_prisma_migration
 
             ```
             </TabPanel>
@@ -296,7 +296,7 @@ If you plan to solely use Prisma instead of the Supabase Data API (PostgREST), t
 
           <TabPanel id="pnpm_sync" label="pnpm">
             ```bash
-            pnpx prisma db pull
+             prisma db pull
             ```
 
             Create a migration file
@@ -306,7 +306,7 @@ If you plan to solely use Prisma instead of the Supabase Data API (PostgREST), t
 
             Synchronize the migrations
             ```bash
-              pnpx prisma migrate diff \
+              pnpm exec prisma migrate diff \
               --from-empty \
               --to-schema-datamodel prisma/schema.prisma \
               --script > prisma/migrations/0_init_supabase/migration.sql
@@ -318,7 +318,7 @@ If you plan to solely use Prisma instead of the Supabase Data API (PostgREST), t
             </Admonition>
 
             ```bash
-            pnpx prisma migrate resolve --applied 0_init_supabase
+            pnpm exec prisma migrate resolve --applied 0_init_supabase
             ```
           </TabPanel>
 
@@ -408,7 +408,7 @@ If you plan to solely use Prisma instead of the Supabase Data API (PostgREST), t
       <TabPanel id="pnpm_client" label="pnpm">
           ```sh
           pnpm install @prisma/client
-          pnpx prisma generate
+          pnpm exec prisma generate
           ```
       </TabPanel>
       <TabPanel id="yarn_client" label="yarn">
